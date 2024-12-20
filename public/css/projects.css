@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'MantouSans';
+    src: url('../fonts/MantouSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TaipeiSans';
+    src: url('../fonts/TaipeiSans.ttf') format('truetype');
+}
+
+body {
+    font-family: 'MantouSans', sans-serif;
+}
+
+.logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.logo {
+    height: 10vh;
+    margin: 0 auto;
+    background-image: url('../images/stc_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-section {
+    position: fixed;
+    right: 0;
+    top: 10%;
+    padding: 10px 10px;
+    z-index: 1050;
+    width: auto;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-section a {
+    color: white;
+    background-color: #000;
+    font-style: italic;
+    text-decoration: underline;
+    padding: 5px 0;
+    display: block;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.nav-section a:hover {
+    background-color: #808080;
+}
+
+.nav-section a.active {
+    background-color: #808080;
+}
+
+
+.footer {
+    background: #000000;
+    color: white;
+    height: 20vh;
+    text-align: center;
+    display: grid;
+    place-items: center; 
+}
+
+
+/* 專案列表 */
+
+.project-section {
+    background: #111111;
+    color: white;
+    padding: 100px 20px 20px 20px;
+    min-height: 100vh; 
+}
+
+.project-item {
+    position: relative;
+    cursor: pointer;
+    height: 300px;
+    background: #000000;
+}
+
+.project-cover {
+    width: 100%;
+    height: 100%;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+}
+
+
+/* 專案內容 */
+
+.modal-content {
+    background-color: #111111;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+}
+
+.modal-header .btn-close {
+    background-color: white;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-text
+{
+    font-family: 'TaipeiSans', sans-serif;
+}
+
+
+
+
