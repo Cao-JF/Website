@@ -30,7 +30,7 @@ body {
     background-position: center;
 }
 
-.banner-cover {
+.banner {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -38,13 +38,9 @@ body {
     justify-content: center;
 }
 
-.banner {
+.banner img {
     width: 100%;
     height: 100%;
-    background-image: url('../images/IMG_0823.JPG');
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     object-fit: cover;
 }
 
