@@ -1,9 +1,11 @@
 //install: node js
 //install web server package: express >npm install express
-var express = require("express");
-var server = express();
-var bodyParser = require("body-parser");
-var DB = require("nedb-promises"); 
+const express = require("express");
+const server = express();
+const bodyParser = require("body-parser");
+const DB = require("nedb-promises"); 
+
+const PORT = process.env.PORT || 1000;
 
 //web root
 server.use(express.static(__dirname + "/public"));
@@ -78,6 +80,6 @@ server.get('/api/projects/:id', async (req, res) => {
 
 
 
-server.listen(80, () => {
-    console.log("Server is running at port 80.");
+server.listen(1000, () => {
+    console.log("Server is running at port 1000.");
 })

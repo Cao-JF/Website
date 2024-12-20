@@ -30,16 +30,22 @@ body {
     background-position: center;
 }
 
-.banner {
-    background-image: url('../images/IMG_0823.JPG');
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-
+.banner-cover {
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/IMG_0823.JPG');
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    object-fit: cover;
 }
 
 .nav-section {

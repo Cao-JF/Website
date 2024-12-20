@@ -12,6 +12,11 @@ body {
     font-family: 'MantouSans', sans-serif;
 }
 
+body.modal-open {
+    /* 防止 Modal 開啟時的跳動 */
+    padding-right: 0 !important;
+}
+
 .logo-container {
     position: fixed;
     top: 0;

@@ -30,27 +30,19 @@
         </div>
 
 
-        <!-- News Section -->
-
         <div class="projects">
             <div class="project-section">
                 <div class="container">
                     <h1>專案</h1>
-                    <div class="row gy-4"> <!-- gy-4 控制行間距 -->
+                    <div class="row gy-4">
                         <div v-for="project in projects" class="col-12">
                             <div class="project-item" @click="showProject(project._id)" data-bs-toggle="modal"
                                 data-bs-target="#projectModal">
-
                                 <div class="project-cover">
                                     <img :src="project.images[0]">
                                 </div>
-                                <!-- 資訊覆蓋層 -->
                                 <div class="project-info">
-                                    <div class="row w-100">
-                                        <div class="col-6">
-                                            <h2>{{project.title}}</h2>
-                                        </div>
-                                    </div>
+                                    <h2>{{project.title}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -58,18 +50,15 @@
                 </div>
             </div>
 
-            <!-- 專案詳情 Modal -->
+            <!-- 專案詳情 -->
             <div class="modal fade" id="projectModal" tabindex="-1">
                 <div class="modal-dialog modal-xl modal-dialog-centered">
                     <div class="modal-content">
-                        <!-- Modal Header -->
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
-                        <!-- Modal Body -->
                         <div class="modal-body">
-                            <!-- Carousel -->
                             <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <button v-for="(img, index) in selectedProject?.images" :key="index" type="button"
@@ -95,7 +84,7 @@
                                 </button>
                             </div>
 
-                            <!-- 專案資訊 -->
+                            <!-- 資訊 -->
                             <div class="project-content mt-4">
                                 <h1>{{selectedProject?.title}}</h1>
                                 <p class="project-text" v-html="selectedProject?.content"></p>
