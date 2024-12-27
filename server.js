@@ -11,8 +11,7 @@ const PORT = process.env.PORT || 1000;
 
 //web root
 server.use(express.static(__dirname + "/public"));
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded());
+
 
 
 const NewsDB = DB.create(__dirname + "/data/News.db"); 
@@ -89,7 +88,7 @@ server.get('/upload', (req, res) => {
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-      cb(null, path.join(__dirname, 'public', 'uploads'))
+      cb(null, path.join(__dirname, '/public/uploads'))
   },
   filename: function(req, file, cb) {
       cb(null, Date.now() + path.extname(file.originalname))
@@ -98,8 +97,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-server.use(express.static('public'));
-server.use('/uploads', express.static('uploads'));
 server.use(bodyParser.json());
 
 server.post('/api/upload', upload.array('images', 5), async (req, res) => {
