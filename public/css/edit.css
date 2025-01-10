@@ -26,3 +26,7 @@ p {
     padding: 10vh 0 10vh 0;
     height: auto;
 }
+
+.mb-2 {
+    white-space: pre-line;
+}

@@ -84,6 +84,7 @@
 .project-text
 {
     font-family: 'TaipeiSans', sans-serif;
+    white-space: pre-line;
 }
 
 
