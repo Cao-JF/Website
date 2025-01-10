@@ -40,7 +40,7 @@ server.get('/edit', (req, res) => {
 
 
 
-
+// 抓取專案
 server.get('/api/projects', async (req, res) => {
   try {
       const projects = await ProjectsDB.find({});
@@ -60,7 +60,9 @@ server.get('/api/projects/:id', async (req, res) => {
 });
 
 
+// EDIT
 
+// 上傳資料
 server.post('/api/upload', upload.array('images', 5), async (req, res) => {
   try {
       const imageUrls = req.files.map(file => '/uploads/' + file.filename);
@@ -118,6 +120,7 @@ server.delete('/api/delete/:id', async (req, res) => {
       res.status(500).json({ error: err.message });
   }
 });
+
 
 
 

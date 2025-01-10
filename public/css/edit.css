@@ -23,6 +23,6 @@ p {
 }
 
 #app {
-    padding: 10vh 0 0 0;
-    height: 100vh;
+    padding: 10vh 0 10vh 0;
+    height: auto;
 }
