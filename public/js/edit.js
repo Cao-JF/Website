@@ -45,14 +45,14 @@ createApp({
 
                 const result = await response.json();
                 if (result.success) {
-                    alert('上傳成功！');
+                    alert('✔︎ 上傳成功！');
                     this.cancelUpload();
                     this.loadItems();
                 } else {
-                    alert('上傳失敗：' + result.error);
+                    alert('⚠︎ 上傳失敗：' + result.error);
                 }
             } catch (err) {
-                alert('上傳錯誤');
+                alert('⚠︎ 上傳錯誤');
             }
         },
         cancelUpload() {
