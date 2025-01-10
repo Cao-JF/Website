@@ -1,0 +1,29 @@
+.about {
+    background: #111111;
+    color: white;
+}
+
+.about-image {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    padding: 50px 0;
+    background: #111111;
+    height: 100%;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family: "TaipeiSans", sans-serif;
+}

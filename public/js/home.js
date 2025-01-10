@@ -1,20 +1,27 @@
 const { createApp, ref } = Vue;
 
-var vueNews = createApp({
+const vueNews = createApp({
     data() {
-        return{
-            News:[]
+        return {
+            News: []
+        }
+    },
+    mounted() {
+        this.getNews();
+    },
+    methods: {
+        getNews() {
+            $.ajax({
+                url: "/api/news",
+                method: "get",
+                dataType: "json",
+                success: results => {
+                    this.News = results;
+                },
+                error: error => {
+                    console.error('⚠︎ 未讀取到最新資訊:', error);
+                }
+            });
         }
     }
-}).mount(".news-section")
-
-$.ajax({
-    url:"/news",
-    method: "get",
-    dataType: "json",
-    success: results=>{
-        vueNews.News = results;
-    }
-
-})
-
+}).mount(".news-section");

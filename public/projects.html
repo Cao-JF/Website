@@ -2,30 +2,47 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>𝙎𝙀𝙀𝙏𝙃𝘼𝙏𝘾𝙊𝙒</title>
     <link href="images/stc_icon.ico" rel="shortcut icon" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/projects.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.13/vue.global.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/projects.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container-fluid p-0">
 
-        <div class="nav-section">
-            <div class="nav-items">
-                <a href="/" class="text-end">home</a>
-                <a href="/projects" class="text-end">projects</a>
-                <a href="#" class="text-end">about</a>
-                <a href="#" class="text-end">contact</a>
-            </div>
-        </div>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="logo-container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects">projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">about</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="logo-container fixed-top">
             <div class="logo"></div>
         </div>
 
@@ -52,7 +69,7 @@
 
             <!-- 專案詳情 -->
             <div class="modal fade" id="projectModal" tabindex="-1">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -103,34 +120,11 @@
         </div>
     </div>
 
-    <script src="js/projects.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <script>
-        const projectItems = document.querySelectorAll('.project-item');
-
-        projectItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                gsap.to(item, {
-                    y: -20,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-
-            item.addEventListener('mouseleave', () => {
-                gsap.to(item, {
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-        });
-    </script>
-
+    <script src="js/projects.js"></script>
 </body>
 
 </html>

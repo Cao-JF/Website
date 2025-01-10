@@ -1,6 +1,4 @@
-const { createApp, ref } = Vue;
-
-const app = createApp({
+const app = Vue.createApp({
     data() {
         return {
             projects: [],
@@ -8,32 +6,21 @@ const app = createApp({
         }
     },
     methods: {
-        async fetchProjects() {
-            try {
-                const response = await fetch('/api/projects');
-                this.projects = await response.json();
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        },
         async showProject(id) {
             try {
                 const response = await fetch(`/api/projects/${id}`);
                 this.selectedProject = await response.json();
-                this.$nextTick(() => {
-                    new bootstrap.Carousel(document.getElementById('projectCarousel'));
-                });
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error fetching project:', error);
             }
         }
     },
-    mounted() {
-        this.fetchProjects();
-        
-        const projectModal = document.getElementById('projectModal');
-        projectModal.addEventListener('hidden.bs.modal', () => {
-            this.selectedProject = null;
-        });
+    async mounted() {
+        try {
+            const response = await fetch('/api/projects');
+            this.projects = await response.json();
+        } catch (error) {
+            console.error('Error fetching projects:', error);
+        }
     }
 }).mount('.projects');
